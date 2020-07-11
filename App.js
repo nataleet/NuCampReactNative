@@ -1,12 +1,16 @@
 import React from 'react';
 import Main from './components/MainComponent';
 import { SafeAreaView, StyleSheet } from 'react-native';
+import { Provider } from 'react-redux';
+import { ConfigureStore } from './redux/configureStore';
+
+const store = ConfigureStore();
 
 export default function App() {
     return (
-        <SafeAreaView style={styles.container}>
+        <Provider store={store}>
             <Main />
-        </SafeAreaView>
+        </Provider>
         
     );
 }
